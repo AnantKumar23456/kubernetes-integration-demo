@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: myapp
+  template:
+    metadata: 
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - image: anant201002/myapp:latest
+        name: myapp-container
+
+        
+# replicas: 1:
+#       - name: myapp
+#         image: <Image>
+# replicas: 1:
+#           limits:
+#             memory: "128Mi"
+#             cpu: "500m"
+#         ports:
+#         - containerPort: <Port>
